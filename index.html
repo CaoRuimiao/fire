@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ padding:0; margin:0;}
+li{ list-style:none;}
+img{ border:none;}
+ul{ position:relative; margin:50px auto; width:400px;}
+ul li{ position:absolute; left:0; top:0; opacity:0;}
+ul li.active{ opacity:1;}
+ul li img{ display:block;}
+</style>
+</head>
+
+<body>
+<ul id="ul">
+	<li><img src="images/1.jpg" alt="" /></li>
+	<li><img src="images/2.jpg" alt="" /></li>
+	<li><img src="images/3.jpg" alt="" /></li>
+	<li><img src="images/4.jpg" alt="" /></li>
+	<li><img src="images/5.jpg" alt="" /></li>
+	<li><img src="images/6.jpg" alt="" /></li>
+	<li><img src="images/7.jpg" alt="" /></li>
+	<li><img src="images/8.jpg" alt="" /></li>
+	<li><img src="images/9.jpg" alt="" /></li>
+	<li><img src="images/10.jpg" alt="" /></li>
+	<li><img src="images/11.jpg" alt="" /></li>
+	<li><img src="images/12.jpg" alt="" /></li>
+	<li><img src="images/13.jpg" alt="" /></li>
+	<li><img src="images/14.jpg" alt="" /></li>
+	<li><img src="images/15.jpg" alt="" /></li>
+	<li><img src="images/16.jpg" alt="" /></li>
+	<li><img src="images/17.jpg" alt="" /></li>
+	<li><img src="images/18.jpg" alt="" /></li>
+	<li><img src="images/19.jpg" alt="" /></li>
+	<li><img src="images/20.jpg" alt="" /></li>
+</ul>
+</body>
+<script>
+//flash动画模拟
+function Flash(id){
+	this.aUl=document.getElementById(id);
+	this.aLi=this.aUl.getElementsByTagName('li');
+	this.n=0;
+	var _this=this;
+	clearInterval(this.timer);
+	this.timer=setInterval(function(){
+		for(var i=0; i<_this.aLi.length; i++){
+			_this.aLi[i].className='';
+		}
+		_this.n++;
+		if(_this.n==19) _this.n=0;
+		_this.aLi[_this.n].className='active';
+	},50);
+	
+}
+//调用;
+new Flash('ul');
+</script>
+</html>
